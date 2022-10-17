@@ -1,0 +1,60 @@
+<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Label x:Name="error" Content="Podaj prawidłowe dane" Foreground="red" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="518,55,0,0" VerticalAlignment="Top"/>
+        <Button Content="Wyczyść dane" HorizontalAlignment="Left" Margin="38,288,0,0" VerticalAlignment="Top" Height="75" Width="321" FontSize="20" Click="Button_Click"/>
+        <Grid x:Name="kwadrat" Visibility="Hidden">
+            <Label Content="Bok kwadratu:" HorizontalAlignment="Left" Margin="38,45,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Pole kwadratu:" HorizontalAlignment="Left" Margin="38,110,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Obwód kwadratu:" HorizontalAlignment="Left" Margin="38,180,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <TextBox x:Name="bokKwadratu" HorizontalAlignment="Left" Margin="239,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" TextChanged="obliczKwadrat_TextChanged"/>
+            <TextBox x:Name="poleKwadratu" IsEnabled="False" HorizontalAlignment="Left" Margin="239,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+            <TextBox x:Name="obwodKwadratu" IsEnabled="False" HorizontalAlignment="Left" Margin="239,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        </Grid>
+        <Grid x:Name="prostokat" Visibility="Hidden">
+            <Label Content="Bok A:" HorizontalAlignment="Left" Margin="38,45,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Bok B:" HorizontalAlignment="Left" Margin="38,87,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Pole prostokąta:" HorizontalAlignment="Left" Margin="38,165,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Obwód prostokąta:" HorizontalAlignment="Left" Margin="38,227,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <TextBox x:Name="bokAProstokatu" HorizontalAlignment="Left" Margin="239,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" TextChanged="obliczProstokat_TextChanged"/>
+            <TextBox x:Name="bokBProstokatu" HorizontalAlignment="Left" Margin="239,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" TextChanged="obliczProstokat_TextChanged"/>
+            <TextBox x:Name="poleProstokatu" IsEnabled="False" HorizontalAlignment="Left" Margin="239,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+            <TextBox x:Name="obwodProstokatu" IsEnabled="False" HorizontalAlignment="Left" Margin="239,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        </Grid>
+        <Grid x:Name="trojkat" Visibility="Visible">
+            <Label Content="Dlugosc podstawy:" HorizontalAlignment="Left" Margin="38,45,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Wysokość trójkąta:" HorizontalAlignment="Left" Margin="38,110,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Pole trójkąta:" HorizontalAlignment="Left" Margin="38,180,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <TextBox x:Name="podstawaTrojkata" HorizontalAlignment="Left" Margin="239,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" TextChanged="obliczTrojkat_TextChanged"/>
+            <TextBox x:Name="wysokoscTrojkata" HorizontalAlignment="Left" Margin="239,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" TextChanged="obliczTrojkat_TextChanged"/>
+            <TextBox x:Name="poleTrojkata" IsEnabled="False" HorizontalAlignment="Left" Margin="239,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        </Grid>
+        <Grid x:Name="kolo" Visibility="Hidden">
+            <Label Content="Promień koła:" HorizontalAlignment="Left" Margin="38,45,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Pole koła:" HorizontalAlignment="Left" Margin="38,110,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <Label Content="Obwód koła:" HorizontalAlignment="Left" Margin="38,180,0,0" VerticalAlignment="Top" FontSize="20px"/>
+            <TextBox x:Name="promienKola" HorizontalAlignment="Left" Margin="239,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" TextChanged="obliczKolo_TextChanged"/>
+            <TextBox x:Name="poleKola" IsEnabled="False" HorizontalAlignment="Left" Margin="239,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+            <TextBox x:Name="obwodKola" IsEnabled="False" HorizontalAlignment="Left" Margin="239,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        </Grid>
+
+
+        <StackPanel Margin="533,168,118,84">
+            <Border BorderBrush="#FF443131" BorderThickness="2" Margin="0,0,0,5">
+                <Label FontWeight="Bold" Background="#FFC8C8C8">Wybierz figurę:</Label>
+            </Border>
+            <RadioButton Content="Kwadrat" IsChecked="True" Checked="RadioButton_Checked"/>
+            <RadioButton Content="Prostokąt" Checked="RadioButton_Checked_1"/>
+            <RadioButton Content="Trójkąt" Checked="RadioButton_Checked_2"/>
+            <RadioButton Content="Koło" Checked="RadioButton_Checked_3"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
